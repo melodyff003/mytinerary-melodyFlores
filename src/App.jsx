@@ -1,12 +1,14 @@
-import Header from './components/Header';
+import NavigationBar from './components/NavigationBar'
+import Hello from './components/Hello'
 import './App.css'
-import './styles/Header.css'
 
 function App() {
   return (
     <>
-      <Header />
-
+      <NavigationBar /> 
+      <hr />
+      <h2>Ahora un saludo</h2>
+     <Hello /> 
     </>
   )
 }
