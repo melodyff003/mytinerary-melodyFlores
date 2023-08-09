@@ -3,18 +3,18 @@
 const Footer = () => {
   return (
     <footer className="">
-      <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8 lg:pt-24">
+      <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-10 sm:px-4 lg:px-6 lg:pt-20">
       <div
       className="mt-16 border-t border-gray-100 pt-8 sm:flex sm:items-center sm:justify-between lg:mt-24">
       <ul className="flex flex-wrap justify-center gap-4 text-xs lg:justify-end">
         <li>
           <a href="#" className="text-gray-500 transition hover:opacity-75">
-            Melody Flores
+            Cities
           </a>
         </li>
         <li>
           <a href="#" className="text-gray-500 transition hover:opacity-75">
-            MindHub AP Mern 04
+            Home
           </a>
         </li>
       </ul>

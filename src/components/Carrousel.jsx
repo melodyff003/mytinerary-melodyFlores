@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState, useEffect} from 'react'
 import '../styles/Carrousel.css'
 
 
@@ -29,36 +29,101 @@ function Carrousel (){
   //   [image]
   // )
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex(index => index + 1)
+        if(index == 2){
+          setIndex(index = 0)
+          console.log(index);
+          return index;
+        }else{
+          console.log(index);
+          return index;
+        }
+    }, 2500);
+    return (() => {
+      clearInterval(interval)
+      console.log(index);
+    }); 
+  }, [index]);
+
+
   const handlePrev = () => {
       setIndex(index => index - 1)
+      if(index == 0){
+        setIndex(index = 2)
+        console.log(index);
+        return index;
+      }else{
+        console.log(index);
+        return index;
+      }
+
   }
 
   const handleNext = () => {
       setIndex(index => index + 1)
+      if(index == 2){
+        setIndex(index = 0)
+        console.log(index);
+        return index;
+      }else{
+        console.log(index);
+        return index;
+      }
   }
 
   
   // container mx-auto justify-content-center
   return (
-    <div className='mx-auto max-w-screen-xl px-2 pb-6 pt-12 sm:px-4 lg:px-6 lg:pt-20'>
-      <h2 className='fs-2'>Popular Mytineraries</h2>
-      <div className=' flex gap-2 m-2'>
-        <div>
+    <div className='mx-auto max-w-screen-xl px-1 pb-4 pt-8 sm:px-2 lg:px-4 lg:pt-15'>
+      <h2 className='fs-2'>Popular Mytineraries</h2> 
+      <div className=' group flex flex-wrap sm:flex-wrap justify-items-center gap-4 m-2'>
+        <div className='group p-3'>
             <img
-            alt="Signage"
+            alt={image[index].title}
             src={image[index].url}
-            className="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover sm:h-64 lg:h-72"
+            className="group-hover:opacity-80 w-80 rounded-bl-3xl rounded-tr-3xl object-cover sm:h-64 lg:h-72"
             />
-
-            <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
-              <a className="icon-link" href="#">
-                <svg className="bi" aria-hidden="true"><use xlinkHref="#box-seam"></use></svg>
-                {image[index].title}
-              </a> 
+            <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4 flex items-center space-x-3">
+                <svg className="h-6 w-6 stroke-sky-500 group-hover:stroke-sky" fill="none" viewBox="0 0 24 24"></svg>
+                <a className="text-slate-900 group-hover:text-sky text-md font-semibold" href='/cities'>{image[index].title}</a>
             </div>
         </div>
-
-
+        <div className='group p-3'>
+            <img
+            alt={image[index].title}
+            src={image[index].url}
+            className="group-hover:opacity-80 w-80 rounded-bl-3xl rounded-tr-3xl object-cover sm:h-64 lg:h-72"
+            />
+            <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4 flex items-center space-x-3">
+                <svg className="h-6 w-6 stroke-sky-500 group-hover:stroke-sky" fill="none" viewBox="0 0 24 24"></svg>
+                <a className="text-slate-900 group-hover:text-sky text-md font-semibold" href='/cities'>{image[index].title}</a>
+            </div>
+        </div>
+        <div className='group p-3'>
+            <img
+            alt={image[index].title}
+            src={image[index].url}
+            className="group-hover:opacity-80  w-80 rounded-bl-3xl rounded-tr-3xl object-cover sm:h-64 lg:h-72"
+            />
+            <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4 flex items-center space-x-3">
+                <svg className="h-6 w-6 stroke-sky-500 group-hover:stroke-sky" fill="none" viewBox="0 0 24 24"></svg>
+                <a className="text-slate-900 group-hover:text-sky text-md font-semibold" href='/cities'>{image[index].title}</a>
+            </div>
+        </div>
+        <div className='group p-3'>
+            <img
+            alt={image[index].title}
+            src={image[index].url}
+            className="group-hover:opacity-80 w-80 rounded-bl-3xl rounded-tr-3xl object-cover sm:h-64 lg:h-72"
+            />
+            <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4 flex items-center space-x-3">
+                <svg className="h-6 w-6 stroke-sky-500 group-hover:stroke-sky" fill="none" viewBox="0 0 24 24"></svg>
+                <a className="text-slate-900 group-hover:text-sky text-md font-semibold" href='./cities'>{image[index].title}</a>
+            </div>
+        </div>
+        {/* falta funcionalidad en botón de cities */}
       </div>
       <div>
         <button className="btn btn-outline-tertiary" type="submit" onClick={handlePrev}>Previous</button>

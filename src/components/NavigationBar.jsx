@@ -8,6 +8,7 @@ const navbar = () => {
     </button>
     <ul className="dropdown-menu">
       <li><a className="dropdown-item" href="#">Home</a></li>
+              {/* falta funcionalidad en botón de cities */}
       <li><a className="dropdown-item" href="">Cities</a></li>
       <li><a className="dropdown-item" href="#">Login</a></li>
     </ul>
