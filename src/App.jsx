@@ -1,14 +1,14 @@
-import NavigationBar from './components/NavigationBar'
-import Hello from './components/Hello'
+import Header from './components/Header'
 import './App.css'
+import Footer from './components/Footer'
+import Carrousel from './components/Carrousel'
 
 function App() {
   return (
     <>
-      <NavigationBar /> 
-      <hr />
-      <h2>Ahora un saludo</h2>
-     <Hello /> 
+      <Header/>
+     <Carrousel/>
+     <Footer/>
     </>
   )
 }

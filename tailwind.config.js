@@ -5,7 +5,8 @@ export default {
     './src/**/*.{js,jsx,ts,tsx}'
 
   ],
-  content: ["./src/components/NavigationBar.jsx"],
+  content: [ "./pages/**/*.{js,ts,jsx,tsx}",
+  "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
       transparent: 'transparent',
