@@ -34,16 +34,16 @@ function Carrousel (){
       setIndex(index => index + 1)
         if(index == 2){
           setIndex(index = 0)
-          console.log(index);
+          // console.log(index);
           return index;
         }else{
-          console.log(index);
+          // console.log(index);
           return index;
         }
     }, 2500);
     return (() => {
       clearInterval(interval)
-      console.log(index);
+      // console.log(index);
     }); 
   }, [index]);
 
@@ -65,10 +65,10 @@ function Carrousel (){
       setIndex(index => index + 1)
       if(index == 2){
         setIndex(index = 0)
-        console.log(index);
+        // console.log(index);
         return index;
       }else{
-        console.log(index);
+        // console.log(index);
         return index;
       }
   }
@@ -77,9 +77,9 @@ function Carrousel (){
   // container mx-auto justify-content-center
   return (
     <div className='mx-auto max-w-screen-xl px-1 pb-4 pt-8 sm:px-2 lg:px-4 lg:pt-15'>
-      <h2 className='fs-2'>Popular Mytineraries</h2> 
-      <div className=' group flex flex-wrap sm:flex-wrap justify-items-center gap-4 m-2'>
-        <div className='group p-3'>
+      <h2 className='text-2xl font-bold sm:text-3xl'>Popular Mytineraries</h2> 
+      <div className='  grid grid-cols-2 group flex flex-wrap sm:flex-wrap justify-items-center gap-4 m-2'>
+        <div className='group p-3 w-auto'>
             <img
             alt={image[index].title}
             src={image[index].url}
@@ -125,9 +125,9 @@ function Carrousel (){
         </div>
         {/* falta funcionalidad en botón de cities */}
       </div>
-      <div>
-        <button className="btn btn-outline-tertiary" type="submit" onClick={handlePrev}>Previous</button>
-        <button className="btn btn-outline-tertiary" type="submit" onClick={handleNext}>Next</button>
+      <div className='flex gap-2'>
+        <button className="btn inline-block rounded p-2 text-sm font-small text-sky outline outline-offset-2 outline-1 focus:ring focus:ring-sky-400" type="submit" onClick={handlePrev}>Previous</button>
+        <button className="btn inline-block rounded p-2 text-sm font-small text-sky outline outline-offset-2 outline-1 focus:ring focus:ring-sky-400" type="submit" onClick={handleNext}>Next</button>
       </div>
     </div>
   );

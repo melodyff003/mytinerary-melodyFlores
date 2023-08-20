@@ -1,15 +1,9 @@
-import Header from './components/Header'
-import './App.css'
-import Footer from './components/Footer'
-import Carrousel from './components/Carrousel'
+import { RouterProvider } from "react-router-dom"
+import router from "./router/router"
 
 function App() {
   return (
-    <>
-      <Header/>
-     <Carrousel/>
-     <Footer/>
-    </>
+    <RouterProvider router={router}/>
   )
 }
 

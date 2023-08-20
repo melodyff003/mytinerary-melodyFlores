@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   mode: 'jit',
   purge: [
@@ -25,5 +26,7 @@ export default {
   },
   variants: {},
   plugins: [],
+  
 }
+
 

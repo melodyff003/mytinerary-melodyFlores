@@ -1,16 +1,19 @@
-// import React from 'react'
+import { Link as Anchor } from 'react-router-dom';
 
 const navbar = () => {
   return (
-  <div className="dropdown">
+  <div className="dropdown p-2">
     <button className="btn btn-outline-tertiary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       Menu
     </button>
     <ul className="dropdown-menu">
-      <li><a className="dropdown-item" href="#">Home</a></li>
-              {/* falta funcionalidad en botón de cities */}
-      <li><a className="dropdown-item" href="">Cities</a></li>
-      <li><a className="dropdown-item" href="#">Login</a></li>
+      <li>
+        <Anchor to={'/'}>Home</Anchor>
+      </li>
+      <li>
+        <Anchor to={'/cities'} className='p-2'>Cities</Anchor>
+      </li>
+      <li><Anchor className="dropdown-item"  to={'/login'}>Login</Anchor></li>
     </ul>
   </div>
   

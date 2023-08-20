@@ -1,4 +1,4 @@
-import NavigationBar from './NavigationBar'
+import NavigationBar from './navigationBar'
 import User from '../assets/user.jpg'
 
 const Header = () => {
@@ -8,7 +8,6 @@ const Header = () => {
           <span className='fs-2 '>
             My Tinerary
           </span>
-          <p className=''>Find your perfect trip, designed by insiders who love and know their cities!</p>
         </a>
         
         <div className='flex justify-end p-2 '>
