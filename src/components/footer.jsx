@@ -17,6 +17,9 @@ const Footer = () => {
             Home
           </a>
         </li>
+        <li className="mx-4 gap-2 text-center">
+          <p>My Tinerary for planning your trips</p>
+        </li>
       </ul>
 
       <ul className="mt-8 flex justify-center gap-6 sm:mt-0 lg:justify-end">
@@ -137,6 +140,7 @@ const Footer = () => {
             </svg>
           </a>
         </li>
+
       </ul>
     </div>
 
