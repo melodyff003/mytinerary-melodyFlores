@@ -24,8 +24,8 @@ export const Cities = () => {
 
     try{
       const response = await axios.get(`http://localhost:8000/api/cities?city=${city.target.value}`)
-        console.log(response.data.cities2);
-        setCities(response.data.cities2);
+        console.log(response.data.city);
+        setCities(response.data.city);
     }catch(error){
       console.log(error);
     }
@@ -74,7 +74,7 @@ export const Cities = () => {
             cities2?.map((city) => {
               return (
                 <Link key={city._id} to={`/cities/${city._id}`}>
-                  <Card name={city.name} description={city.description} province={city.province} image={city.image} className=""/>
+                  <Card name={city.city} description={city.description} province={city.province} image={city.image} className=""/>
                 </Link>
               )
             })

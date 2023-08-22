@@ -1,24 +1,24 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 
 const EventDetails = () => {
     const { id } = useParams();
     console.log(id);
 
+    const [identifier, setIdentifier] = useState()
+
     useEffect(() => {
-        console.log("UseEffect executed");
-        axios.get('http://localhost:8000/api/cities')
-            .then((response) => {
-                response = id
-                console.log(response);
-          })
-          .catch(err => console.log(err))
+        axios.get(`http://localhost:8000/api/cities/${id}`)
+            .then(response => setIdentifier(response.data.identifier))
+            .catch(err => console.log(err))
     }, [])
-  
+
+console.log(identifier); 
+    
     return (
         <div>
-            <h2 className='text-3xl text-center'>Detalle del evento: {id}</h2>
+            <h2 className='text-3xl text-center'>City: {id}</h2>
         </div>
     )
 }

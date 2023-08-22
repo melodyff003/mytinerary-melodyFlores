@@ -85,7 +85,7 @@ function Carrousel (){
             src={image[index].url}
             className="group-hover:opacity-80 w-80 rounded-bl-3xl rounded-tr-3xl object-cover sm:h-64 lg:h-72"
             />
-            <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4 flex items-center space-x-3">
+            <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4 flex it ems-center space-x-3">
                 <svg className="h-6 w-6 stroke-sky-500 group-hover:stroke-sky" fill="none" viewBox="0 0 24 24"></svg>
                 <a className="text-slate-900 group-hover:text-sky text-md font-semibold" href='/cities'>{image[index].title}</a>
             </div>
