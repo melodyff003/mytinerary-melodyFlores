@@ -7,7 +7,7 @@ function Carrousel (){
 
   const image = [
     {
-      title: 'Ushuaia',
+      title: 'Tierra del Fuego',
       url: 'https://denomades.s3.us-west-2.amazonaws.com/blog/wp-content/uploads/2018/08/30192236/26824519578_6a65e00419_o.jpg'
     },
     {
@@ -20,14 +20,6 @@ function Carrousel (){
     }
   ];
 
-  // useEffect(
-  //   () => {
-  //     setInterval(() => {
-  //       setIndex(index => index +1)
-  //     }, 1500)
-  //   },
-  //   [image]
-  // )
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -123,7 +115,6 @@ function Carrousel (){
                 <a className="text-slate-900 group-hover:text-sky text-md font-semibold" href='./cities'>{image[index].title}</a>
             </div>
         </div>
-        {/* falta funcionalidad en botón de cities */}
       </div>
       <div className='flex gap-2'>
         <button className="btn inline-block rounded p-2 text-sm font-small text-sky outline outline-offset-2 outline-1 focus:ring focus:ring-sky-400" type="submit" onClick={handlePrev}>Previous</button>
