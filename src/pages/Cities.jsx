@@ -1,34 +1,28 @@
-import axios from 'axios';
+// import axios from 'axios';
 import  {Card } from '../components/Card'
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react"
+import { useDispatch, useSelector } from 'react-redux';
+import { filter, get_cities } from '../store/actions/cityActions';
 
 export const Cities = () => {
 
-  const [cities2, setCities] = useState();
+  const cities = useSelector((store) => store.cityReducer.cities)
+  console.log(cities);
+
+  let inputSearch = useRef();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-      console.log("UseEffect executed");
-      axios.get('http://localhost:8000/api/cities')
-          .then((response) => {
-          // console.log(response.data);
-          setCities(response.data.city)
-        })
-        .catch(err => console.log(err))
+    dispatch(get_cities())
   }, [])
 
-  console.log(cities2);
 
-  const inputController = async (city) => {
-     console.log(city.target.value);
-
-    try{
-      const response = await axios.get(`http://localhost:8000/api/cities?city=${city.target.value}`)
-        console.log(response.data.city);
-        setCities(response.data.city);
-    }catch(error){
-      console.log(error);
-    }
+  const inputController = () => {
+        dispatch(filter({
+          name: inputSearch.current.value
+        }))
+  
 }
 
   return (
@@ -38,7 +32,7 @@ export const Cities = () => {
       <label htmlFor="Search" className="sr-only"> Search </label>
 
       <input
-        onChange={inputController}
+        ref={inputSearch}
         type="text"
         id="Search"
         placeholder="Search for..."
@@ -46,7 +40,7 @@ export const Cities = () => {
       />
 
       <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
-        <button type="button" className="text-gray-600 hover:text-gray-700">
+        <button onClick={inputController} type="button" className="text-gray-600 hover:text-gray-700">
           <span className="sr-only">Search</span>
 
           <svg
@@ -71,7 +65,7 @@ export const Cities = () => {
       <h3 className="text-3xl my-4 font-bold">Cities</h3>
       <div className=''>
           {
-            cities2?.map((city) => {
+            cities?.map((city) => {
               return (
                 <Link key={city._id} to={`/cities/${city._id}`}>
                   <Card name={city.city} description={city.description} province={city.province} image={city.image} className=""/>

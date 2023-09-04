@@ -12,13 +12,14 @@ const EventDetails = () => {
         axios.get(`http://localhost:8000/api/cities/${id}`)
             .then(response => setIdentifier(response.data.identifier))
             .catch(err => console.log(err))
-    }, [])
+    }, [id])
 
 console.log(identifier); 
     
     return (
         <div>
             <h2 className='text-3xl text-center'>City: {id}</h2>
+            <p></p>
         </div>
     )
 }
