@@ -5,24 +5,24 @@ import dollar from "../assets/dollar.png"
 
 const EventDetails = () => {
     const { id } = useParams();
-    console.log(id);
+    // console.log(id);
 
-    const [identifier, setIdentifier] = useState()
+    const [identifier, setIdentifier] = useState({})
 
-    useEffect(() => {
-        axios.get(`http://localhost:8000/api/cities/${id}`)
-            .then(response => {
-                setIdentifier(response.data.city)
-                console.log(response.data.city);
-            })
+    useEffect(()=> {
+        axios.get('http://localhost:8000/api/cities/' + id)
+            .then(detail => {
+                console.log(detail.data);
+                setIdentifier(detail.data.city)})
             .catch(err => console.log(err))
-    }, [])
+    },[id])
 
-console.log(identifier); 
-    
+    // console.log(identifier);
+
     return (
         <div>
             <h2 className='text-3xl text-center'>City: {identifier.city}</h2>
+            <h2>Este es el {id}</h2>
 
             {/* intineraries */}
             <div className="flex flex-row flex-wrap gap-4 m-3 bg-[#76A9FA]">
